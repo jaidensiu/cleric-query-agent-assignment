@@ -1,5 +1,34 @@
 # Cleric Query Agent Assignment
 
+## My Approach
+
+My approach to building this Kubernetes (K8s) Querying Agent leveraging an LLM started with investigating how we can leverage LLM models like OpenAI GPT-4o to query about an application deployed on a K8s cluster. Since natural language can be weird even for an LLM to interpret, it can cause unwanted side-effects when going from our query to LLM inference to performing the actual K8s query.
+
+After playing around and prompting OpenAI's models to best understand its strengths and limitations, I found that giving the model a role and then prompting it infer intent was the best way to normalize a specific request. This would mean that the LLM would infer that the queries "Get num pods in default namespace" and "Get the count of pods for the default namespace" have an intent along the lines "The user wants to get the number of pods in the default namespace" including the relevant `kubectl` command.
+
+To further make the inference more robust, I added an instruction to possibly categorize the query as vague and tell the user that the agent could not understand its intent. This is good to eliminate outliers and ensures the user is querying relevant requests to the agent.
+
+## Results
+
+An AI agent tailored to knowledge about K8s and can process queries and answer questions about applications deployed on a K8s cluster, including:
+- Pod count and status
+- Service count
+- Deployment count and details
+- Node count
+- Intent recognition regarding K8s
+- Query validator
+
+## What I learned
+
+- Better understanding the strengths and limitations of LLM models
+- How to integrate LLM models to query about an application deployed on a K8s cluster
+- LLM prompting techniques including role-based prompting
+
+## What to improve
+
+- The scalability of the agent capabilities (could maybe define an interface of commands that the user could query, but in a slightly more LLM-interpretable way)
+- The agent itself (it's not perfect, and probably doesn't cover all the K8s querying cases)
+
 ## Introduction
 This document outlines the requirements and guidelines for the Cleric Query Agent Assignment. Your task is to develop an AI agent capable of accurately answering queries about applications deployed on a Kubernetes cluster.
 
