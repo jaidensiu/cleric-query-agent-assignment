@@ -1,0 +1,39 @@
+2024-12-11 00:54:37,326 INFO - Successfully loaded Kubernetes configuration
+2024-12-11 00:54:37,351 INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://10.88.111.3:8000
+2024-12-11 00:54:37,351 INFO - [33mPress CTRL+C to quit[0m
+2024-12-11 00:54:48,233 INFO - Received query: get pods with label banana milk
+2024-12-11 00:54:48,243 DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a Kubernetes administrator.'}, {'role': 'system', 'content': "Identify the query's intent then provide the user's intention and kubectl command."}, {'role': 'system', 'content': "If the query's intent is vague, return: Could not understand your intent."}, {'role': 'user', 'content': 'get pods with label banana milk'}], 'model': 'gpt-4o-mini', 'max_tokens': 100, 'response_format': {'type': 'text'}, 'temperature': 0.1}}
+2024-12-11 00:54:48,267 DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2024-12-11 00:54:48,267 DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-11 00:54:48,278 DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b2008e0>
+2024-12-11 00:54:48,278 DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10527e7c0> server_hostname='api.openai.com' timeout=5.0
+2024-12-11 00:54:48,287 DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10b200970>
+2024-12-11 00:54:48,287 DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-11 00:54:48,287 DEBUG - send_request_headers.complete
+2024-12-11 00:54:48,288 DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-11 00:54:48,288 DEBUG - send_request_body.complete
+2024-12-11 00:54:48,288 DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-11 00:54:49,212 DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 11 Dec 2024 05:54:49 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-iwfk8ednn74ftonafyjlhqwp'), (b'openai-processing-ms', b'746'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199840'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'48ms'), (b'x-request-id', b'req_9c80031526be3a023bbc02380f65c443'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=A0Gp1IBdrWfD8qx0Byxa9OZbZv1FcsS1UUe1hjKXVuA-1733896489-1.0.1.1-NvDqja25rRbEgCcFkdFOYqKOIdm0TS17_p0nq6zr7rgeRpCRCAwD8.HkPc.DtcGYn9KAhRjecUwAlsQdZfwTSQ; path=/; expires=Wed, 11-Dec-24 06:24:49 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=3y4FzIksnThopa91gT3jMzjH64NTXAIuEbFHEee.9dg-1733896489109-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8f0338dbdc33ab1c-YYZ'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2024-12-11 00:54:49,215 INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-11 00:54:49,216 DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-11 00:54:49,217 DEBUG - receive_response_body.complete
+2024-12-11 00:54:49,217 DEBUG - response_closed.started
+2024-12-11 00:54:49,218 DEBUG - response_closed.complete
+2024-12-11 00:54:49,218 DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 11 Dec 2024 05:54:49 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-iwfk8ednn74ftonafyjlhqwp'), ('openai-processing-ms', '746'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199840'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '48ms'), ('x-request-id', 'req_9c80031526be3a023bbc02380f65c443'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=A0Gp1IBdrWfD8qx0Byxa9OZbZv1FcsS1UUe1hjKXVuA-1733896489-1.0.1.1-NvDqja25rRbEgCcFkdFOYqKOIdm0TS17_p0nq6zr7rgeRpCRCAwD8.HkPc.DtcGYn9KAhRjecUwAlsQdZfwTSQ; path=/; expires=Wed, 11-Dec-24 06:24:49 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=3y4FzIksnThopa91gT3jMzjH64NTXAIuEbFHEee.9dg-1733896489109-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '8f0338dbdc33ab1c-YYZ'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2024-12-11 00:54:49,218 DEBUG - request_id: req_9c80031526be3a023bbc02380f65c443
+2024-12-11 00:54:49,229 INFO - GPT response: ChatCompletion(id='chatcmpl-Ad9yKDY8b3VStQuvFMXdvIL8hrozW', choices=[Choice(finish_reason='stop', index=0, logprobs=None, message=ChatCompletionMessage(content='User\'s intention: The user wants to retrieve a list of pods that have both the labels "banana" and "milk".\n\nKubectl command: \n```bash\nkubectl get pods -l banana,milk\n```', refusal=None, role='assistant', audio=None, function_call=None, tool_calls=None))], created=1733896488, model='gpt-4o-mini-2024-07-18', object='chat.completion', service_tier=None, system_fingerprint='fp_bba3c8e70b', usage=CompletionUsage(completion_tokens=44, prompt_tokens=62, total_tokens=106, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=0, audio_tokens=0, reasoning_tokens=0, rejected_prediction_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=0)))
+2024-12-11 00:54:49,229 INFO - User intent based on GPT analysis: User's intention: The user wants to retrieve a list of pods that have both the labels "banana" and "milk".
+
+Kubectl command: 
+```bash
+kubectl get pods -l banana,milk
+```
+2024-12-11 00:54:49,246 DEBUG - response body: {"kind":"PodList","apiVersion":"v1","metadata":{"resourceVersion":"17970"},"items":[]}
+
+2024-12-11 00:54:49,247 INFO - Generated answer: There are currently 0 pods with label 'banana' in the default namespace.
+2024-12-11 00:54:49,247 INFO - 127.0.0.1 - - [11/Dec/2024 00:54:49] "POST /query HTTP/1.1" 200 -
+2024-12-11 00:55:20,662 DEBUG - close.started
+2024-12-11 00:55:20,663 DEBUG - close.complete
